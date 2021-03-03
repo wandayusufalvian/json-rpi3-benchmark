@@ -1,0 +1,14 @@
+﻿# install SSHFS 
+to mount local folder(windows) with rpi folder using ssh
+https://github.com/billziss-gh/sshfs-win
+
+# install ravenDB in rpi 3
+https://www.youtube.com/watch?v=x4w_HfLWbX8
+
+# install couchDB in rpi 3
+https://github.com/jguillod/couchdb-on-raspberry-pi
+
+# driver in .net NuGet:
+- RavenDB : RavenDB.Client
+- CouchDB : MyCouch
+- Json : NewtonsoftJson
