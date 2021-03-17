@@ -3,16 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-namespace timeseries
+
+namespace timeseries.RavenDB
 {
-    class DataBySeconds : AbstractIndexCreationTask<SensorData>
+    public class DataByModFive : AbstractIndexCreationTask<SensorData>
     {
-        public DataBySeconds()
+        public DataByModFive()
         {
 
             //TimeSpan elapsedSpan = new TimeSpan(sensor.datetime.Ticks - start.Ticks);
             this.Map = sensors => from sensor in sensors
-                                  select new { Seconds= (new TimeSpan(sensor.datetime.Ticks - (new DateTime(2021, 1, 1, 0, 0, 0)).Ticks)).TotalSeconds}; 
+                                  select new { ModFiveIndex = (new TimeSpan(sensor.datetime.Ticks - (new DateTime(2021, 1, 1, 0, 0, 0)).Ticks)).TotalSeconds % 5 };
         }
     }
 }

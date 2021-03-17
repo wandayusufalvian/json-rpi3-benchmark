@@ -17,15 +17,21 @@ namespace timeseries
     {
         static void Main()
         {
-            var watch = System.Diagnostics.Stopwatch.StartNew(); //start execution 
-            //write program here :
-            ServicesJson.JsonSerialization();
+            //WRITE DATA==============================================
+            //ServicesJson.JsonSerialization3(new List<int> { 0, 0, 0, 5 }, 5);
+            //Services.ServicesRavenDB.WriteData(new List<int> { 0, 23, 59, 59 }, 5);
+            ServicesCouchDB.WriteDataCouchDB(new List<int> { 0, 0, 0, 5 }, 5);
 
-            watch.Stop();
-            Console.WriteLine($"Write Time: {watch.ElapsedMilliseconds} ms"); //end of execution
+            //READ DATA===============================================
+            //ServicesJson.JsonDeserialization();
+            //ServicesRavenDB.re
+            //Services.ServicesRavenDB.RetrieveAllDocsRavenDB();
+            //var x=Services.ServicesRavenDB.RetrieveAllDocs();
+            //foreach (var i in x)
+            //{
+            //    Console.WriteLine(i.datetime +","+ i.ModFive);
+            //}
 
-
-            
         }
     }
 }
